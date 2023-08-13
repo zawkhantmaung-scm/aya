@@ -1,16 +1,14 @@
-const findOnce = (arrayList) => {
-    const val = {};
+const findOnce = (arrayList, count) => {
+    let c = ''
     arrayList.map((i) => {
-        console.log(i, val[i], (val[i]||0) + 1)
-        return val[i] = (val[i]||0) + 1;
-    });
-
-    console.log(val)
-    for (const key in val) {
-        if (val[key] == 1) return key
-    }
+        const b = arrayList.filter((j) => j == i)
+        if (b.length == count) {
+            [c] = b
+        }
+    })
+    return c
 };
 
-const arrayList = [ 1, 2, 2, 3, 1, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7, 7,7 ]
+const arrayList = [ 1, 2, 2, 1, 4, 3, 4, 4, 4, 4, 5, 5, 6, 6, 7, 7,7 ]
 
-console.log(findOnce(arrayList));
+console.log(findOnce(arrayList, 1))
