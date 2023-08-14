@@ -69,3 +69,5 @@
         8624220
         2022468
         ```
+
+5. Write a function that findOnce.
